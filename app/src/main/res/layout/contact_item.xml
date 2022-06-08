@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/itemViewRoot">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:layout_marginBottom="2dp"
+        android:background="@color/material_dynamic_neutral90"
+        app:cardCornerRadius="4dp">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerInParent="true">
+
+            <ImageView
+                android:id="@+id/person_image"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:visibility="visible"
+                tools:srcCompat="@drawable/contact_image01"
+                 />
+
+
+            <TextView
+                android:id="@+id/name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@+id/person_image"
+                android:textSize="24sp"
+                android:text="Ajith"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="3dp"/>
+
+            <TextView
+                android:id="@+id/number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/name"
+                android:layout_toEndOf="@+id/person_image"
+                android:text="9087150667"
+                android:textSize="22sp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="6dp"/>
+
+            <ImageView
+                android:id="@+id/delete_image"
+                android:layout_width="10dp"
+                android:layout_height="15dp"
+                android:layout_above="@+id/date"
+                android:layout_alignParentEnd="true"
+                tools:srcCompat="@android:drawable/ic_menu_delete" />
+
+            <TextView
+                android:id="@+id/date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/name"
+                android:layout_alignParentEnd="true"
+                android:textSize="16sp"
+                android:visibility="gone"/>
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+
+</RelativeLayout>

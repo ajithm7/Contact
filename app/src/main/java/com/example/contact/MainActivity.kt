@@ -1,61 +1,89 @@
 package com.example.contact
 
-import android.annotation.SuppressLint
+import android.app.Dialog
+import android.content.DialogInterface
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
+import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.contact.database.ContactDatabase
 import com.google.android.material.floatingactionbutton.FloatingActionButton
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
+
 
 class MainActivity : AppCompatActivity() {
     private lateinit var add: FloatingActionButton
     private lateinit var recyclerView: RecyclerView
-    private lateinit var adapter: ContactAdapter
-
-
+    private lateinit var viewModel: ContactViewModel
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        add = findViewById(R.id.add)
 
+        viewModel = ViewModelProvider(this)[ContactViewModel::class.java]
+
+        add = findViewById(R.id.add)
         recyclerView = findViewById(R.id.recyclerView)
         recyclerView.setHasFixedSize(true)
         recyclerView.layoutManager = LinearLayoutManager(this@MainActivity)
-        val llm = LinearLayoutManager(this)
-        llm.orientation = LinearLayoutManager.VERTICAL
 
-        setData()
+        viewModel.getData().observe(this) {
+            recyclerView.adapter = ContactAdapter(it, this@MainActivity)
+            ContactAdapter(it, this@MainActivity).notifyDataSetChanged()
+        }
 
         add.setOnClickListener {
             startActivity(Intent(this@MainActivity, AddContact::class.java))
         }
-    }
-
-    @SuppressLint("NotifyDataSetChanged")
-    private fun setData() {
-        val database = ContactDatabase.getInstance(applicationContext)
-        val noteDao = database!!.contactDao()
-
-//        database operation should not be in main thread. so use corooutine
-//        val list=noteDao?.getAllNotes()
-        CoroutineScope(Dispatchers.IO).launch {
-            val list = noteDao.getAllContacts()
-            withContext(Dispatchers.Main) {
-                Toast.makeText(this@MainActivity,"inside withContext adapter creation", Toast.LENGTH_SHORT).show()
-                adapter = ContactAdapter(list)
-                recyclerView.adapter=adapter
-                adapter.notifyDataSetChanged()
-
-
-            }
-        }
 
     }
+
+    override fun onBackPressed() {
+
+        val builder: AlertDialog.Builder = AlertDialog.Builder(this@MainActivity)
+
+        builder.setMessage("Do you want to exit ?")
+
+        builder.setTitle("Alert !")
+
+        builder.setCancelable(true)
+
+        builder
+            .setPositiveButton(
+                "Yes",
+                DialogInterface.OnClickListener { dialog, yes ->
+                    finish()
+                })
+
+        builder
+            .setNegativeButton(
+                "No",
+                DialogInterface.OnClickListener { dialog, no ->
+                    dialog.cancel()
+                })
+
+        val alertDialog: AlertDialog = builder.create()
+
+        alertDialog.show()
+    }
+
+    fun removeAt(position : Int) {
+        viewModel.deleteOne(position)
+    }
+
+    fun showDetailsDialog(){
+        val dialog=Dialog(this,R.style.PopUpDialogStyle)
+        dialog.setContentView(R.layout.custom_dialog)
+//        dialog.getWindow().setBackgroundBlurRadius("12dp")
+        dialog.show()
+    }
+    fun dialogClose(){
+        val dialog=Dialog(this,R.style.PopUpDialogStyle)
+        dialog.setContentView(R.layout.custom_dialog)
+        dialog.cancel()
+
+    }
+
+
 }
+

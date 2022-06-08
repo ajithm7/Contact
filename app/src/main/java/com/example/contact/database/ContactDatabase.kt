@@ -10,13 +10,17 @@ abstract class ContactDatabase: RoomDatabase() {
 
     companion object{
         private var INSTANCE:ContactDatabase?=null
-        fun getInstance(context: Context):ContactDatabase?{
-            if(INSTANCE==null){
-                INSTANCE=
-                    Room.databaseBuilder(context,ContactDatabase::class.java,"contact_database").build()
-                return INSTANCE
+        fun getInstance(context: Context):ContactDatabase{
+            synchronized(ContactDatabase::class.java) {
+//            if(INSTANCE==null){
+                INSTANCE =
+                    Room.databaseBuilder(context, ContactDatabase::class.java, "contact_database")
+                        .fallbackToDestructiveMigration()
+                        .build()
+                return INSTANCE!!
+//            }}
+//            return INSTANCE!!
             }
-            return INSTANCE
         }
 
     }

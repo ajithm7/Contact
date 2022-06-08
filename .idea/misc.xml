@@ -3,9 +3,34 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/Admin/AndroidStudioProjects/Contact/app/src/main/res/layout/activity_add_contact.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/Admin/AndroidStudioProjects/Contact/app/src/main/res/layout/activity_main.xml" value="0.24010416666666667" />
-        <entry key="..\:/Users/Admin/AndroidStudioProjects/Contact/app/src/main/res/layout/contect_item.xml" value="0.264" />
+        <entry key="../../../../layout/custom_preview.xml" value="0.11116717120753447" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/Contact/app/src/main/res/drawable/contact_background.xml" value="0.124" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/Contact/app/src/main/res/drawable/poerson_item_background.xml" value="0.124" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/Contact/app/src/main/res/layout/activity_add_contact.xml" value="0.2" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/Contact/app/src/main/res/layout/activity_main.xml" value="0.6" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/Contact/app/src/main/res/layout/contact_detail.xml" value="0.11302083333333333" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/Contact/app/src/main/res/layout/contact_item.xml" value="0.11302083333333333" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/Contact/app/src/main/res/layout/contect_item.xml" value="0.10461956521739131" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/Contact/app/src/main/res/layout/custom_dialog.xml" value="0.3125845737483085" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/Contact/app/src/main/res/mipmap-anydpi-v26/add_person1_round.xml" value="0.124" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/Contact/app/src/main/res/mipmap-anydpi-v26/add_person2.xml" value="0.1385" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/Contact/app/src/main/res/mipmap-anydpi-v26/call_logo.xml" value="0.1" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/Contact/app/src/main/res/mipmap-anydpi-v26/contact.xml" value="0.124" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/Contact/app/src/main/res/mipmap-anydpi-v26/ic_contact.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/add_person1_background.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/contact1_background.xml" value="0.103" />
+        <entry key="app/src/main/res/drawable/contact_background.xml" value="0.103" />
+        <entry key="app/src/main/res/drawable/ic_contact_background.xml" value="0.103" />
+        <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.103" />
+        <entry key="app/src/main/res/layout/activity_add_contact.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.2477355072463768" />
+        <entry key="app/src/main/res/layout/contact_detail.xml" value="0.22056159420289856" />
+        <entry key="app/src/main/res/layout/contact_item.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/contect_item.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/custom_dialog.xml" value="0.3251052856445313" />
+        <entry key="app/src/main/res/mipmap-anydpi-v26/add_person.xml" value="0.1325" />
+        <entry key="app/src/main/res/mipmap-anydpi-v26/add_person1.xml" value="0.1325" />
+        <entry key="app/src/main/res/mipmap-anydpi-v26/add_person1_round.xml" value="0.1325" />
       </map>
     </option>
   </component>
@@ -14,5 +39,12 @@
   </component>
   <component name="ProjectType">
     <option name="id" value="Android" />
+  </component>
+  <component name="VisualizationToolProject">
+    <option name="state">
+      <ProjectState>
+        <option name="scale" value="0.375" />
+      </ProjectState>
+    </option>
   </component>
 </project>
